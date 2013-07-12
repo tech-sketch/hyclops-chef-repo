@@ -1,4 +1,4 @@
 package "zabbix-agent" do
-    action :remove
+  action :remove
 end
 

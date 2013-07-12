@@ -1,4 +1,5 @@
-default['hyclops']['source_url'] = 'https://github.com/tech-sketch/hyclops/archive/0.1.0.tar.gz'
+default['hyclops']['version'] = '0.1.0'
+default['hyclops']['source_url'] = "https://github.com/tech-sketch/hyclops/archive/#{default['hyclops']['version']}.tar.gz"
 default['hyclops']['install_dir'] = '/opt/hyclops'
 default['hyclops']['server'] = '127.0.0.1'
 default['hyclops']['port'] = '5555'
