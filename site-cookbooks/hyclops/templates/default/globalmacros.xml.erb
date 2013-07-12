@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2013-04-30T08:35:59Z</date>
+    <macros>
+        <macro>
+            <macro>{$GATEONE_URL}</macro>
+            <value><%= node.gateone.url %></value>
+        </macro>
+<%
+        key = 'Input GateOne API Key'
+        secret = 'Input GateOne Secret Key'
+        if File.exist?('/opt/gateone/server.conf')
+            api_keys_line = File.readlines('/opt/gateone/server.conf').grep(/^api_keys/).join()
+            key = api_keys_line.gsub(/(api_keys|=|\")/,'').strip.split(/[,:]/)[0]
+            secret = api_keys_line.gsub(/(api_keys|=|\")/,'').strip.split(/[,:]/)[1]
+        end
+%>
+        <macro>
+            <macro>{$GATEONE_KEY}</macro>
+            <value><%= key %></value>
+        </macro>
+        <macro>
+            <macro>{$GATEONE_SECRET}</macro>
+            <value><%= secret %></value>
+        </macro>
+        <macro>
+            <macro>{$HYCLOPS_SERVER}</macro>
+            <value><%= node.hyclops.server %></value>
+        </macro>
+        <macro>
+            <macro>{$HYCLOPS_PORT}</macro>
+            <value><%= node.hyclops.port %></value>
+        </macro>
+    </macros>
+</zabbix_export>
+

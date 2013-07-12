@@ -1,0 +1,14 @@
+{
+  "name": "zabbix_agent",
+  "description": "Zabbix Agent Role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "second_name": "Riperton"
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[zabbix_agent]"
+  ]
+}

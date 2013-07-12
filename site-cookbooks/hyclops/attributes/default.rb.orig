@@ -1,0 +1,28 @@
+### for HyClops Server Recipes ###
+default['hyclops']['source_url'] = 'https://github.com'
+default['hyclops']['install_dir'] = '/opt/hyclops'
+default['hyclops']['server'] = '127.0.0.1'
+default['hyclops']['port'] = '5555'
+default['zabbix']['sender_path'] = `which zabbix_sender`
+default['zabbix']['hyclops']['log_level'] = 'WARNING'
+default['zabbix']['hyclops']['logfile'] = '/var/log/zabbix/hyclops.log'
+
+### for Zabbix Server Recipes ###
+default['zabbix']['version'] = '2.0.6'
+default['zabbix']['frontend_dir'] = '/usr/share/zabbix'
+default['zabbix']['externalscripts_dir'] = '/usr/lib/zabbix/externalscripts'
+default['zabbix']['process_owner'] = 'zabbix'
+default['zabbix']['process_group'] = 'zabbix'
+default['zabbix']['server'] = node[:ipaddress]  # Used at Zabbix Server & GateOne Server Recipe.
+default['zabbix']['port'] = '10051'
+default['zabbix']['frontend_url'] = "http://#{default['zabbix']['server']}/zabbix"
+default['zabbix']['login_username'] = 'admin'
+default['zabbix']['login_password'] = 'zabbix'
+
+### for GateOne Server Recipes ###
+default['gateone']['rpm_package_url'] = 'https://github.com/downloads/liftoff/GateOne/gateone-1.1-1.noarch.rpm'
+default['tornado']['rpm_package_url'] = 'https://github.com/downloads/liftoff/GateOne/tornado-2.4-1.noarch.rpm'
+default['gateone']['deb_package_url'] = 'https://github.com/downloads/liftoff/GateOne/gateone_1.1-1_all.deb'
+default['tornado']['deb_package_url'] = 'https://github.com/downloads/liftoff/GateOne/python-tornado_2.4-1_all.deb'
+default['gateone']['url'] = "https://#{default['zabbix']['server']}"
+

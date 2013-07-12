@@ -1,0 +1,27 @@
+[zabbix]
+name=ZABBIX - $basearch
+baseurl=http://repo.zabbix.com/zabbix/<%= node.zabbix.agent.version.scan(/^[0-9]+\.[0-9]+/)[0] %>/rhel/6/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+
+[zabbix-source]
+name=ZABBIX - $basearch - Source
+baseurl=http://repo.zabbix.com/zabbix/2.0/rhel/6/SRPMS/
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+gpgcheck=1
+
+[zabbix-non-supportd]
+name=ZABBIX non-supported - $basearch 
+baseurl=http://repo.zabbix.com/non-supported/rhel/6/$basearch/
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+gpgcheck=1
+
+[zabbix-non-supported-source]
+name=ZABBIX non-supported - $basearch - Source
+baseurl=http://repo.zabbix.com/non-supported/rhel/6/SRPMS/
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+gpgcheck=1
