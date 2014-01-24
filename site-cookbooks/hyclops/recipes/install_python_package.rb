@@ -7,13 +7,19 @@ if ohai[:languages][:python][:version] =~ /^2\.6\..*/
     end
   end
 end
-%w{apache-libcloud zabbix-api pyzmq psphere configobj boto}.each do |pypkg|
+%w{zabbix-api pyzmq psphere configobj boto}.each do |pypkg|
   python_pip pypkg do
     action :install
   end
-  python_pip "python-daemon" do
-    version "1.6"
-    action :install
-  end
+end
+
+python_pip "apache-libcloud" do
+  version "0.13.2"
+  action :install
+end
+
+python_pip "python-daemon" do
+  version "1.6"
+  action :install
 end
 
