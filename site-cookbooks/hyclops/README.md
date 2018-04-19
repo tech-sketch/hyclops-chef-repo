@@ -101,7 +101,7 @@ Set run_list the following recipe.
 License
 ======
 
-Copyright 2013 TIS Inc. HyClops for Zabbix Team (hyclops@ml.tis.co.jp)
+Copyright 2013 TIS Inc. HyClops for Zabbix Team
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
